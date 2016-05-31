@@ -1,7 +1,7 @@
 {
   "name": "vcard-project-item",
-  "version": "0.0.2",
-  "description": "Footer",
+  "version": "0.0.3",
+  "description": "Project item",
   "private": true,
   "authors": [
     "YCLIN"
