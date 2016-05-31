@@ -39,6 +39,19 @@
         p {
             margin: 0;
         }
+        
+        i.link {
+            cursor: pointer;
+            font-size: inherit;
+            line-height: inherit;
+            color: blue;
+            text-decoration: underline;
+        }
+        
+        i.link:hover {
+            text-decoration: none;
+            text-shadow: 1px 1px 1px #555;
+        }
         </style>
         <!-- Así mostramos las variables definidas {{}} -->
         <div>
@@ -47,6 +60,7 @@
         <div>
             <h4>{{projectItem.technology}}</h4>
             <p>{{projectItem.description}}</p>
+            <i class="link" on-tap="handleClick">screenshoot</i>
         </div>
     </template>
 </dom-module>
@@ -63,6 +77,12 @@ Polymer({
                 description: 'Lorem ipsum dolor sit amet, ...' //y valor por defecto
             }
         }
+    },
+    handleClick: function(e, detail) {
+        var self = this;
+        var info = {};
+        info.title = self.projectItem.technology;
+        this.fire('changeCarousel', info);
     }
 });
 </script>
