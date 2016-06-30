@@ -1,5 +1,6 @@
 <!-- Imports polymer -->
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../vcard-project-popup/vcard-project-popup.html">
 <!-- Defines element markup -->
 <dom-module id="vcard-project-item">
     <template>
@@ -60,7 +61,7 @@
         <div>
             <h4>{{projectItem.technology}}</h4>
             <p>{{projectItem.description}}</p>
-            <i class="link" on-tap="handleClick">screenshoot</i>
+            <vcard-project-popup></vcard-project-popup>
         </div>
     </template>
 </dom-module>
@@ -77,12 +78,6 @@ Polymer({
                 description: 'Lorem ipsum dolor sit amet, ...' //y valor por defecto
             }
         }
-    },
-    handleClick: function(e, detail) {
-        var self = this;
-        var info = {};
-        info.title = self.projectItem.technology;
-        this.fire('changeCarousel', info);
     }
 });
 </script>
